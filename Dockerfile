@@ -38,7 +38,6 @@ RUN unzip /opt/oracle/instantclient-basiclite-linux.x64-19.6.0.0.0dbru.zip -d /o
 ENV LD_LIBRARY_PATH="/opt/oracle/instantclient"
 ENV OCI_HOME="/opt/oracle/instantclient"
 ENV OCI_LIB_DIR="/opt/oracle/instantclient"
-ENV OCI_INCLUDE_DIR="/opt/oracle/instantclient/sdk/include"
 ENV OCI_VERSION=19
 
 RUN echo '/opt/oracle/instantclient/' | tee -a /etc/ld.so.conf.d/oracle_instant_client.conf && ldconfig
