@@ -50,6 +50,9 @@ RUN apt-get clean -y \
 # install git
 RUN apt-get install -y git
 
+# install lsof
+RUN apt-get install -y lsof
+
 RUN apt-get -y autoremove \
 && rm -rf /usr/share/man \
 && rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
