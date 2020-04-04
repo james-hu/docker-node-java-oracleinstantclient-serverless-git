@@ -1,7 +1,7 @@
 FROM node:10.19.0-buster-slim
 
 # install serverless
-RUN npm install -g serverless@1.48.0
+RUN npm install -g serverless@1.67.0
 
 # update sources list
 RUN apt-get clean \
