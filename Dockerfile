@@ -61,4 +61,4 @@ RUN node -v
 RUN npm -version
 RUN echo $JAVA_HOME
 RUN java -version
-RUN sls -version
+# RUN sls -version
