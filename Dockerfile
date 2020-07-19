@@ -1,7 +1,7 @@
-FROM node:10.19.0-buster-slim
+FROM node:12.18.2-buster-slim
 
 # install serverless
-RUN npm install -g serverless@1.48.0
+RUN npm install -g serverless@1.75.1
 
 # update sources list
 RUN apt-get clean \
@@ -62,3 +62,4 @@ RUN npm -version
 RUN echo $JAVA_HOME
 RUN java -version
 RUN sls -version
+RUN git --version
