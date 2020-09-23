@@ -1,4 +1,4 @@
-FROM node:12.18.4-buster-slim
+FROM node:10.22.1-buster-slim
 
 # install serverless
 RUN npm install -g serverless@1.83.0
