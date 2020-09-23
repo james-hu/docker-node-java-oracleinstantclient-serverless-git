@@ -1,7 +1,7 @@
-FROM node:12.18.2-buster-slim
+FROM node:12.18.4-buster-slim
 
 # install serverless
-RUN npm install -g serverless@1.75.1
+RUN npm install -g serverless@1.83.0
 
 # update sources list
 RUN apt-get clean \
