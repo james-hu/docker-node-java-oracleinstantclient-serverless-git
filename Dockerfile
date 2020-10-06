@@ -9,7 +9,7 @@ RUN apt-get clean \
     && apt-get dist-upgrade -y
 
 # install openjdk
-RUN apt-get install -y gnupg wget unzip software-properties-common
+RUN apt-get install -y gnupg wget zip unzip software-properties-common
 RUN wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | apt-key add -
 RUN add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
 RUN apt-get update
