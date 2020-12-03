@@ -1,4 +1,4 @@
-FROM node:12.19.0-buster-slim
+FROM node:12.20.0-buster-slim
 
 # update sources list
 RUN apt-get clean \
