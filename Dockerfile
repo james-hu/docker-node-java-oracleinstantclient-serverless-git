@@ -40,7 +40,7 @@ ENV OCI_VERSION=19
 RUN echo '/opt/oracle/instantclient/' | tee -a /etc/ld.so.conf.d/oracle_instant_client.conf && ldconfig
 
 # install serverless
-RUN npm install -g serverless@2.11.1
+RUN npm install -g serverless@2.14.0
 
 # purge
 RUN apt-get clean -yq \
