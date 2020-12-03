@@ -7,6 +7,7 @@ The image contains:
 * Oracle Instant Client Light
 * Serverless.com installed globally
 * Git
+* Tools like pgrep, lsof
 
 Please note that the size of the image is quite large.
 It also contains other tools like sed, awk, perl, grep, etc.

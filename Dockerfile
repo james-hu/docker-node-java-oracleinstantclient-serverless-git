@@ -50,8 +50,8 @@ RUN apt-get clean -yq \
 # install git
 RUN apt-get install -yq git
 
-# install lsof
-RUN apt-get install -yq lsof
+# install lsof and pgrep etc.
+RUN apt-get install -yq lsof procps
 
 RUN apt-get -yq autoremove \
 && rm -rf /usr/share/man \
