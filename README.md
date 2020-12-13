@@ -1,4 +1,4 @@
-# Docker image for NodeJS + Java + Oracle Instant Client + Serverless + Git
+# Docker image for NodeJS + Java + Oracle Instant Client + Serverless + Git + more...
 
 The image contains:
 
@@ -7,7 +7,10 @@ The image contains:
 * Oracle Instant Client Light
 * Serverless.com installed globally
 * Git
-* Tools like pgrep, lsof
+* Tools like pgrep, lsof, wget, curl, unzip, etc.
+* Tools like sed, awk, grep, tail, perl, etc.
+* redis-server and redis-client
+* Cypress.io installed globally
+* Python3 (with locust)
 
 Please note that the size of the image is quite large.
-It also contains other tools like sed, awk, perl, grep, etc.
