@@ -1,4 +1,8 @@
-FROM node:12.20.0-buster-slim
+FROM redis:6 as redis
+FROM cypress/included:6.1.0
+
+# copy redis files
+COPY --from=redis /usr/local/bin/redis-* /usr/local/bin/
 
 # update sources list
 RUN apt-get clean \
@@ -40,12 +44,16 @@ ENV OCI_VERSION=19
 RUN echo '/opt/oracle/instantclient/' | tee -a /etc/ld.so.conf.d/oracle_instant_client.conf && ldconfig
 
 # install serverless
-RUN npm install -g serverless@2.14.0
+RUN npm install -g serverless@2.15.0
+
+# install python related
+RUN apt-get -yq install python3-pip
+RUN pip3 install greenlet gevent locust retrying 
 
 # purge
 RUN apt-get clean -yq \
 && apt-get autoclean -yq \
-&& apt-get purge -yq unzip gnupg wget curl make autoconf g++ python3 perl perl5
+&& apt-get purge -yq make autoconf g++ perl perl5
 
 # install git
 RUN apt-get install -yq git
@@ -53,13 +61,22 @@ RUN apt-get install -yq git
 # install lsof and pgrep etc.
 RUN apt-get install -yq lsof procps
 
+# purge again
 RUN apt-get -yq autoremove \
 && rm -rf /usr/share/man \
 && rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
 
+ENTRYPOINT []
+
+# show version info
 RUN node -v
 RUN npm -version
+RUN sls -version
+RUN cypress -v
+
 RUN echo $JAVA_HOME
 RUN java -version
-RUN sls -version
+
 RUN git --version
+RUN redis-server --version
+RUN redis-cli --version
